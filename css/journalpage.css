@@ -1,3 +1,25 @@
+.addNew{
+	position:relative;
+	height:10px;
+	font-weight:bold;
+	fontsize:10px;
+	left:2px;
+	color:black;
+}
+
+.removeEntry{
+	position:relative;
+	height:10px;
+	font-weight:bold;
+	fontsize:10px;
+	left:2px;
+	color:black;
+}
+
+.addNew:hover{
+	font-weight:bold;
+	color: #ff99cc;
+}
 
 .journalDiv{
 	position:absolute;
@@ -7,30 +29,66 @@
 	height:95%;
 	width:60%;
 	z-index:10000;
+	display:table;
 }
+
+.journalTable{
+	width:100%;
+	border-collapse: collapse;
+}
+	
+.journalTable td { 
+	overflow: hidden; 
+}
+
 
 .journalDateRow{
 	position:relative;
 	top:5px;
-	left:20px;
+	left:5%;
 	height:100%;
+	width:95%;
 }
+
 .journalEntryRow{
 	position:relative;
-
+	top:5px;
+	left:10%;
+	width:90%;
 }
+
 .journalDate{
 	font-family:"Papyrus", fantasy;
 	font-style:italic;
 	font-size:18px;
 	font-weight:bold;
+	position:relative;
+	left:1%;
+	width:98%;
+	opacity:0.6;
 }
+
+.editjournalDate{
+	font-family:"Papyrus", fantasy;
+	font-style:italic;
+	font-size:18px;
+	font-weight:bold;
+	position:relative;
+	left:1%;
+	width:98%
+	opacity:1;
+}
+
 .journalEntry{
 	font-family:"Papyrus", fantasy;
 	font-style:italic;
 	font-size:20px;
 	font-weight:normal;
 	padding-bottom:10px;
+	width: 90%; 
+    box-sizing: border-box;
+     -webkit-box-sizing:border-box;
+     -moz-box-sizing: border-box;
 }
 
 .journalText{
@@ -41,6 +99,19 @@
 	resize:none;
 	border-style:none;
 	border-color:transparent;
-	
-	
+	background-color: transparent;
+	opacity: 0.7;
+	width:80%;
+}
+
+.editjournalText{
+	font-family:"Papyrus", fantasy;
+	font-style:italic;
+	font-size:24px;
+	font-weight:normal;
+	resize:none;
+	border-style:none;
+	background-color: transparent;
+	opacity:1;
+	width:80%;
 }

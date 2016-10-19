@@ -1,21 +1,37 @@
 .documentationDiv{
 		position:absolute;
-		background-color: #f5f3ee;
+		background-color: #e6e6e6;
 		top:0px;
 		left:20%;
 		padding-left:7px;
 		width:60%;
 		z-index: 8000;
 }
-
+/* #f5f3ee */
 h2{
 		text-decoration: bold;
 		z-index: 9000;
 		color: #cb99ff;
 }
 h2:nth-of-type(even){
-		color: #ccff99;
+		color: green;
 	}
+	
+	/*#ccff99 */
 h2:nth-of-type(3n){
 		color: #ff99cc;
 	}
+
+iframe#largeVideo{
+	position:relative;
+	width:560px;
+	height:315px;
+	z-index:999999;
+}
+
+a {
+  display: inline-block;
+  margin-bottom: 20px;
+  color: #000;
+  font-family: Arial, sans-serif;
+}
