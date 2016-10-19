@@ -58,7 +58,7 @@
 }
 
 .journalDate{
-	font-family:"Papyrus", fantasy;
+	font-family:"Comic Sans MS", cursive, sans-serif;
 	font-style:italic;
 	font-size:18px;
 	font-weight:bold;
@@ -69,12 +69,12 @@
 }
 
 .editjournalDate{
-	font-family:"Papyrus", fantasy;
+	font-family:"Comic Sans MS", cursive, sans-serif;
 	font-style:italic;
 	font-size:18px;
 	font-weight:bold;
 	position:relative;
-	left:1%;
+	left:10%;
 	width:98%
 	opacity:1;
 }
