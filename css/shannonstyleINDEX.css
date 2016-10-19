@@ -1,0 +1,100 @@
+
+/* makes all margins and padding default to 0 - it only uses non-zero if otherwise defined later on */
+body {
+	background: #99ffcc;
+	margin:0px;
+	padding:0px;	
+	font-family: tahoma;
+}
+
+#cb99ff////ccff99////ff99cc
+
+/* START OF NAVIGATION STICKY NOTE CSS*/
+/* Attribution: https://code.tutsplus.com/tutorials/create-a-sticky-note-effect-in-5-easy-steps-with-css3-and-html5--net-13934 - editted to my specifications with degrees and colors*/
+	
+	.nav ul, li{
+		list-style: none;
+	}
+	.nav ul{
+		overflow: hidden;
+		padding: 1em;
+	}
+	.nav ul li{
+		text-decoration: none;
+		color: black;
+		display: block;
+		height: 400px;
+		width: 300px;
+		padding: 10px;
+		float: left;
+		background: #cb99ff;
+		margin: 10%
+		
+		-moz-box-shadow: 5px 5px 7px rgba(33,33,33,1); /*FIREFOX*/
+		-webkit-box-shadow: 5px 5px 7px rgba(33,33,33,.7); /*CHROME OPERA SAFARI*/
+		box-shadow: 5px 5px 7px rgba(33,33,33,.7); /*OLD OPERA*/
+		
+		-moz-transition: -moz-transform .15s linear; /*FIREFOX*/
+		-o-transition: -o-transform .15s linear;  /*OLD OPERA*/
+		-webkit-transition: -webkit-transform .15s linear; /*CHROME OPERA SAFARI*/
+		
+		-webkit-transform: rotate(-6deg); /*CHROME OPERA SAFARI*/
+		-o-transform: rotate(-6deg); /*OLD OPERA*/
+		-moz-transform: rotate(-6deg); /*FIREFOX*/
+	  }
+	.nav ul li:nth-child(2){
+		-o-transform: rotate(5deg); /*OLD OPERA*/
+		-webkit-transform: rotate(5deg); /*CHROME OPERA SAFARI*/
+		-moz-transform: rotate(5deg); /*FIREFOX*/
+		position: relative;
+		top: 5px;
+		background: #cbff99;
+	}
+	.nav ul li:nth-child(3){
+		-o-transform: rotate(-2deg); /*OLD OPERA*/
+		-webkit-transform: rotate(-2deg); /*CHROME OPERA SAFARI*/
+		-moz-transform: rotate(-3deg); /*FIREFOX*/
+		position: relative;
+		top: -7px;
+		background: #ff99cc;
+	}
+
+	.nav ul li:hover, .nav ul li:focus{
+		box-shadow: 10px 10px 7px rgba(0,0,0,.7);
+		-moz-box-shadow: 10px 10px 7px rgba(0,0,0,.7);
+		-webkit-box-shadow: 10px 10px 7px rgba(0,0,0,.7);
+		position: relative;
+	}
+
+	.nav ul li h2{
+		margin: 5px;
+		text-decoration: bold;
+	}
+	.nav ul li p{
+		margin: 10px;
+		text-decoration: none;
+	}
+	.nav ul li a h2{
+		margin: 5px;
+		text-decoration: bold;
+	}
+	.nav ul li a p{
+		margin: 10px;
+		text-decoration: none;
+	}
+	.nav a{
+		text-decoration: none;
+		color: black;
+	}
+
+/* SPECIFIC TO NAVIGATION NOTES - CREATE A STICKY & HOME PAGE & DESIGN DOCUMENTATION*/
+	
+	.pageList {
+		display: table;   /* Allow the centering to work */
+		margin: 0 auto;
+	}
+
+	#horizontalList {
+		display: inline;
+	}
+	

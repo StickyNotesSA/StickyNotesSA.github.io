@@ -1,0 +1,46 @@
+
+.journalDiv{
+	position:absolute;
+	background: url(../images/paper1.jpg);
+	top:70px;
+	left:20%;
+	height:95%;
+	width:60%;
+	z-index:10000;
+}
+
+.journalDateRow{
+	position:relative;
+	top:5px;
+	left:20px;
+	height:100%;
+}
+.journalEntryRow{
+	position:relative;
+
+}
+.journalDate{
+	font-family:"Papyrus", fantasy;
+	font-style:italic;
+	font-size:18px;
+	font-weight:bold;
+}
+.journalEntry{
+	font-family:"Papyrus", fantasy;
+	font-style:italic;
+	font-size:20px;
+	font-weight:normal;
+	padding-bottom:10px;
+}
+
+.journalText{
+	font-family:"Papyrus", fantasy;
+	font-style:italic;
+	font-size:20px;
+	font-weight:normal;
+	resize:none;
+	border-style:none;
+	border-color:transparent;
+	
+	
+}

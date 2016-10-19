@@ -1,0 +1,35 @@
+.documentationDiv{
+		position:absolute;
+		background-color: #f5f3ee;
+		top:0px;
+		left:20%;
+		padding-left:7px;
+		width:60%;
+		z-index: 8000;
+}
+
+h2{
+		text-decoration: bold;
+		z-index: 9000;
+		color: #cb99ff;
+}
+h2:nth-of-type(even){
+		color: #ccff99;
+	}
+h2:nth-of-type(3n){
+		color: #ff99cc;
+	}
+h3{
+	padding-left:10px;
+}
+p{
+	padding-left: 20px;
+}
+img#fltRight{
+	position: relative;
+	float:right;
+}
+img#fltRight{
+	position: relative;
+	float:right;
+}
