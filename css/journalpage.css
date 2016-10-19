@@ -80,7 +80,7 @@
 }
 
 .journalEntry{
-	font-family:"Papyrus", fantasy;
+	font-family:"Comic Sans MS", cursive, sans-serif;
 	font-style:italic;
 	font-size:20px;
 	font-weight:normal;
@@ -92,7 +92,7 @@
 }
 
 .journalText{
-	font-family:"Papyrus", fantasy;
+	font-family:"Comic Sans MS", cursive, sans-serif;
 	font-style:italic;
 	font-size:20px;
 	font-weight:normal;
@@ -105,7 +105,7 @@
 }
 
 .editjournalText{
-	font-family:"Papyrus", fantasy;
+	font-family:"Comic Sans MS", cursive, sans-serif;
 	font-style:italic;
 	font-size:24px;
 	font-weight:normal;
