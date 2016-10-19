@@ -45,7 +45,7 @@
 .journalDateRow{
 	position:relative;
 	top:5px;
-	left:5%;
+	left:20px;
 	height:100%;
 	width:95%;
 }
@@ -53,7 +53,7 @@
 .journalEntryRow{
 	position:relative;
 	top:5px;
-	left:10%;
+	left:50px;
 	width:90%;
 }
 
