@@ -14,17 +14,21 @@
 				right:0px;
 				padding:0px;
 				margin:0px;
-				height: 300%;
+				height: 93%;
+				overflow: auto;
 			}
 		</style>
 		
 		<script type="text/javascript" src="javascript/jquery-1.3.2.js"></script>
 		<script type="text/javascript" src="javascript/ui.core.js"></script>
+		<script type="text/javascript" src="javascript/header.js"></script>		
+		<script type="text/javascript" src="javascript/journalpage.js"></script>
 		<script type="text/javascript" src="javascript/clock.js"></script>
 		<script type="text/javascript" src="javascript/cookie.js"></script>
 
 		<script type="text/javascript">
 			window.onload=function(){
+				document.getElementById("txtusername").textContent = "Project Documentation";
 				var bkgrnd = getCookie("bkgrnd");
 				if(bkgrnd != ""){
 					document.getElementById("content").style.backgroundImage = bkgrnd;
@@ -34,7 +38,7 @@
 			}
 
 		$(function() {
-			
+		
 			$("#bkgrnd-cork").click(function(){
 				document.getElementById("content").style.backgroundImage = "url(images/cork.png)";
 				setCookie("bkgrnd", "url(images/cork.png)");
@@ -50,8 +54,8 @@
 				setCookie("bkgrnd", "url(images/wboard.png)");
 			});
 			$("#bkgrnd-paper").click(function(){
-				document.getElementById("content").style.backgroundImage = "url(images/paper6.jpg)";
-				setCookie("bkgrnd", "url(images/paper6.jpg)");
+				document.getElementById("content").style.backgroundImage = "url(images/paper6.png)";
+				setCookie("bkgrnd", "url(images/paper6.png)");
 			});
 		
 		});
@@ -60,56 +64,283 @@
     <body>
 		<button id="myButton" onclick="window.location.href='index.html'">&lt;&lt; Go Home</button>
 		<div class="header"></div>
-		<div id="txtusername">Project Documentation</div>
+		<div id="txtusername"></div>
 		<div id="clockDate"></div>
 		<div id="clockTime"></div>
-		
+
 		<ul class="bkgrnd">
 			<li id="bkgrnd-cork" style="background-image:url(images/cork.png)">&nbsp;&nbsp;</li>
 			<li id="bkgrnd-bboard" style="background-image:url(images/chalkboard.png)">&nbsp;&nbsp;</li>
 			<li id="bkgrnd-wboard" style="background-color:#f5f3ee">&nbsp;&nbsp;</li>
-			<li id="bkgrnd-paper" style="background-image:url(images/paper6.jpg)">&nbsp;&nbsp;</li>
+			<li id="bkgrnd-paper" style="background-image:url(images/paper6.png)">&nbsp;&nbsp;</li>
 		</ul>
 
-		<div class="content">
+		<div id="content" class="content">
 			<div class="documentationDiv">
 				<h2>Abstract</h2>
-				<p>HELLO</p>
+				<p>The purpose of this project was to demonstrate my knowledge of HTML, CSS, and JavaScript (including jQuery) through the development and design of an interface and several webpages tied together in one website. Throughout this project, I started to understand the development of webpages and how changing one element or forgetting to close a tag can change the whole feel and design of the page. In the development of cookies and my interfaces, I continued my learning of JavaScript through variables, functions, and cookies. Overall, I am really happy with how the website turned out and seeing the design concepts I had from the start of the project to the end of it because it showed me how much trial and error development goes into creating a functioning website with user interactivity.</p>
 
 				<!--DESIGN GOALS AND CONCEPTS-->
 				<h2>Design Goals</h2>
-				<p>HELLO</p>
+				<ol type="i">
+					<li>To build an interactive interface which can be used to create sticky note reminders and an onlin journal.</li>
+					<li>To use LocalStorage and Cookies to retain data between pages and sessions.</li>
+					<li>To use javascript as the basis for allowing the user to interact with the pages.</li>
+				</ol>
 				
 				<h2>Design Concept</h2>
-				<p>HELLO</p>
+				<p>One of the primary design concepts was continuity across the main pages.  </p>
+				<p class="centered"> <img align="center" src="images/heirarchy.png" /> </p>
 				
 				<!--DESCRIPTION & EXAMPLES OF CODING-->
 				<h2>HTML Tags</h2>
-				<p>HELLO</p>
+				<ol type="i">
+					<li> The button in the top left hand corner of the page on all the pages is controlled by this button tag: <br />				
+						&nbsp;&nbsp;&lt;button id="myButton" onclick="window.location.href='index.html'"&gt;&amp;lt;&amp;lt; Go Home&lt;/button&gt;
+					</li>
+					<li> The "buttons" in the top right hand corner of the page that control the background selector are controlled by a ul tag: <br />				
+						&nbsp;&nbsp;&lt;ul class="bkgrnd"&gt;<br />
+						&nbsp;&nbsp;&nbsp;&nbsp;	&lt;li id="bkgrnd-cork" style="background-image:url(images/cork.png)"&gt;&amp;nbsp;&amp;nbsp;&lt;/li&gt;<br />
+						&nbsp;&nbsp;&nbsp;&nbsp;	&lt;li id="bkgrnd-bboard" style="background-image:url(images/chalkboard.png)"&gt;&amp;nbsp;&amp;nbsp;&lt;/li&gt;<br />
+						&nbsp;&nbsp;&nbsp;&nbsp;	&lt;li id="bkgrnd-wboard" style="background-color:#f5f3ee"&gt;&amp;nbsp;&amp;nbsp;&lt;/li&gt;<br />
+						&nbsp;&nbsp;&nbsp;&nbsp;	&lt;li id="bkgrnd-paper" style="background-image:url(images/paper6.png)"&gt;&amp;nbsp;&amp;nbsp;&lt;/li&gt;<br />
+						&nbsp;&nbsp;&lt;/ul&gt;
+					</li>
+					<li> Over the course of this project, I got very used to using div elements and these are seen everywhere throughout my code. For example, I use the following HTML to have places to put the header, and then the JavaScript files come and override the text in the middle:<br />				
+						&nbsp;&nbsp;&lt;div class="header"&gt;&lt;/div&gt;<br />
+						&nbsp;&nbsp;&lt;div id="txtusername"&gt;&lt;/div&gt;<br />
+						&nbsp;&nbsp;&lt;div id="clockDate"&gt;&lt;/div&gt;<br />
+						&nbsp;&nbsp;&lt;div id="clockTime"&gt;&lt;/div&gt;					</li>
+					<li> The journal page uses the table tag to enter and format elements <br />				
+						&nbsp;&nbsp;&lt;table id="journalTable" class="journalTable"&gt;<br />
+						&nbsp;&nbsp;&nbsp;&nbsp;&lt;tr id="emptyTR"&gt;&lt;/tr&gt;<br />
+						&nbsp;&nbsp;&lt;/table&gt;					
+					</li>
+					<li> Other HTML tags I used in the site include: 
+						&lt;html&gt;, &lt;head&gt;, &lt;title&gt;, &lt;body&gt;, &lt;script&gt;, 
+						&lt;style&gt;, &lt;link&gt;.&lt;h2&gt;, &lt;h3&gt;, &lt;p&gt;, &lt;div&gt;, &lt;ol&gt;, 
+						&lt;ul&gt;, &lt;li&gt;, &lt;table&gt;, &lt;tr&gt;,  &lt;canvas&gt; (for easter egg snake game on index page), 
+						&lt;meta&gt;, &lt;a href&gt;					
+					</li>
+
+				</ol>
 				
 				<h2>CSS</h2>
-				<p>HELLO</p>
-				
+				<ol type="i">
+					<li> The CSS for the button in the top left hand corner of the page on all the pages is styled by this: <br />
+							&nbsp;&nbsp;button#myButton{<br />
+							&nbsp;&nbsp;&nbsp;&nbsp;	position:absolute;<br />
+							&nbsp;&nbsp;&nbsp;&nbsp;	top:10px;<br />
+							&nbsp;&nbsp;&nbsp;&nbsp;	left:10px;<br />
+							&nbsp;&nbsp;&nbsp;&nbsp;	z-index:9999;<br />
+							&nbsp;&nbsp;&nbsp;&nbsp;	transition-duration: 0.7s;<br />
+							&nbsp;&nbsp;&nbsp;&nbsp;	border-radius: 2px;<br />
+							&nbsp;&nbsp;&nbsp;&nbsp;	margin:0px;<br />
+							&nbsp;&nbsp;&nbsp;&nbsp;	font-family: tahoma;<br />
+							&nbsp;&nbsp;&nbsp;&nbsp;	background: transparent;<br />
+							&nbsp;&nbsp;&nbsp;&nbsp;	border: none;<br />
+							&nbsp;&nbsp;&nbsp;&nbsp;	color: black;<br />
+							&nbsp;&nbsp;&nbsp;&nbsp;	padding: 4px;<br />
+							&nbsp;&nbsp;&nbsp;&nbsp;	text-align: center;<br />
+							&nbsp;&nbsp;&nbsp;&nbsp;	text-decoration: none;<br />
+							&nbsp;&nbsp;&nbsp;&nbsp;	display: inline-block;<br />
+							&nbsp;&nbsp;&nbsp;&nbsp;	font-size: 14px;<br />
+							&nbsp;&nbsp;}<br />
+							<br />
+							&nbsp;&nbsp;button#myButton:hover{<br />
+							&nbsp;&nbsp;&nbsp;&nbsp;		background: black;<br />
+							&nbsp;&nbsp;&nbsp;&nbsp;		color: #99ffcc;<br />
+							&nbsp;&nbsp;&nbsp;&nbsp;		box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19);<br />
+							&nbsp;&nbsp;}
+					</li>
+					<li> The CSS for the buttons in the top right hand corner of the page that set the background are styled by this: <br />				
+						&nbsp;&nbsp;ul.bkgrnd{<br />
+						&nbsp;&nbsp;&nbsp;&nbsp;	list-style-type:none;<br />
+						&nbsp;&nbsp;&nbsp;&nbsp;	position:absolute;<br />
+						&nbsp;&nbsp;&nbsp;&nbsp;	top:0px;<br />
+						&nbsp;&nbsp;&nbsp;&nbsp;	right:2px;<br />
+						&nbsp;&nbsp;&nbsp;&nbsp;	padding:0px;<br />
+						&nbsp;&nbsp;&nbsp;&nbsp;	margin:0px;<br />
+						&nbsp;&nbsp;&nbsp;&nbsp;	z-index:9999;<br />
+						&nbsp;&nbsp;}<br />
+						<br />
+						&nbsp;&nbsp;ul.bkgrnd li{<br />
+						&nbsp;&nbsp;&nbsp;&nbsp;	background-color:#3C3C3C;<br />
+						&nbsp;&nbsp;&nbsp;&nbsp;	display:inline;<br />
+						&nbsp;&nbsp;&nbsp;&nbsp;	width:30px;<br />
+						&nbsp;&nbsp;&nbsp;&nbsp;	font-weight:bold;<br />
+						&nbsp;&nbsp;&nbsp;&nbsp;	text-align:center;<br />
+						&nbsp;&nbsp;&nbsp;&nbsp;	float:left;<br />
+						&nbsp;&nbsp;&nbsp;&nbsp;	padding:2px 4px 2px 4px;<br />
+						&nbsp;&nbsp;&nbsp;&nbsp;	margin:2px;<br />
+						&nbsp;&nbsp;&nbsp;&nbsp;	-moz-border-radius:0px 0px 5px 5px;<br />
+						&nbsp;&nbsp;&nbsp;&nbsp;	-webkit-border-bottom-left-radius: 5px;<br />
+						&nbsp;&nbsp;&nbsp;&nbsp;	-webkit-border-bottom-right-radius: 5px;<br />
+						&nbsp;&nbsp;&nbsp;&nbsp;	-moz-box-shadow: 0 1px 3px #777;<br />
+						&nbsp;&nbsp;&nbsp;&nbsp;	cursor:pointer;<br />
+						&nbsp;&nbsp;&nbsp;&nbsp;	border:1px solid #ECEDD5;<br />
+						&nbsp;&nbsp;&nbsp;&nbsp;	border-top:none;<br />
+						&nbsp;&nbsp;}<br />
+					</li>
+					<li> The CSS for the headers and their colors on this page (also how the stickies on the index page are styled) uses the nth-of-type style: <br />
+						&nbsp;&nbsp;h2{<br />
+						&nbsp;&nbsp;&nbsp;&nbsp;	text-decoration: bold;<br />
+						&nbsp;&nbsp;&nbsp;&nbsp;	z-index: 9000;<br />
+						&nbsp;&nbsp;&nbsp;&nbsp;	color: #cb99ff;<br />
+						&nbsp;&nbsp;&nbsp;&nbsp;	left: 20px;<br />
+						&nbsp;&nbsp;}<br />
+						&nbsp;&nbsp;h2:nth-of-type(even){<br />
+						&nbsp;&nbsp;&nbsp;&nbsp;	color: lime;<br />
+						&nbsp;&nbsp;}<br />
+							<br />
+						&nbsp;&nbsp;h2:nth-of-type(3n){<br />
+						&nbsp;&nbsp;&nbsp;&nbsp;	color: #ff99cc;<br />
+						&nbsp;&nbsp;}
+					</li>
+				</ol>
+								
 				<h2>JavaScript</h2>
-				<p>HELLO</p>
+				<ol type="i">
+					<li> The buttons in the upper right hand corner that let the user chose the background use some jQuery inorder to set the cookie from the buttons: <br />				
+						&nbsp;&nbsp;$("#bkgrnd-bboard").click(function(){<br />
+						&nbsp;&nbsp;&nbsp;&nbsp;	document.getElementById("content").style.backgroundImage = "url(images/chalkboard.png)";<br />
+						&nbsp;&nbsp;&nbsp;&nbsp;	setCookie("bkgrnd", "url(images/chalkboard.png)");<br />
+						&nbsp;&nbsp;});<br />
+					</li>
+					<li> The saveNotes() function is located in the myLocalStore.js. It was probably one of the harder functions to write out of the whole project. 
+					It utilizes local storage to save the notes for the location, color, and content of the note <br />				
+						&nbsp;&nbsp;saveNotes = function(){<br />
+							&nbsp;&nbsp;&nbsp;&nbsp;var noteList = document.getElementsByClassName("jStickyNote");<br />
+							&nbsp;&nbsp;&nbsp;&nbsp;var noteNum;<br />
+							&nbsp;&nbsp;&nbsp;&nbsp;var noteobj;<br />
+							&nbsp;&nbsp;&nbsp;&nbsp;var noteArr = [];<br />
+							&nbsp;&nbsp;&nbsp;&nbsp;for (noteNum = 0; noteNum &lt; noteList.length; noteNum++) {<br />
+							&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;noteObj = new Object();<br />
+							&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;noteObj["top"] = noteList[noteNum].getBoundingClientRect().top.toString() + "px";<br />
+							&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;noteObj["left"] = noteList[noteNum].getBoundingClientRect().left.toString() + "px";<br />
+							&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;noteObj["color"] = noteList[noteNum].parentNode.getAttribute('class').split(' ')[0];<br />
+							&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;noteObj["content"] = noteList[noteNum].getElementsByTagName("TEXTAREA")[0].value;<br />
+							&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;noteArr.push(noteObj);<br />
+							&nbsp;&nbsp;&nbsp;&nbsp;}<br />
+							&nbsp;&nbsp;&nbsp;&nbsp;localStorage.setItem('NoteList', JSON.stringify(noteArr));<br />
+						&nbsp;&nbsp;}
+					</li>
+					<li> On every page there is an internal script to run different functions from several .js files. The script checks the cookies and updates the clock information: <br />				
+						&nbsp;&nbspwindow.onload=function(){<br />
+						&nbsp;&nbsp;&nbsp;&nbsp;	var userName;<br />
+						&nbsp;&nbsp;&nbsp;&nbsp;	if(checkCookie("UserName")){<br />
+						&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;		userName=getCookie("UserName");<br />
+						&nbsp;&nbsp;&nbsp;&nbsp;	} else {<br />
+						&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;		userName = "Guest";<br />
+						&nbsp;&nbsp;&nbsp;&nbsp;	}<br />
+						&nbsp;&nbsp;&nbsp;&nbsp;	document.getElementById("txtusername").textContent = userName + "\'s Journal";<br />
+						&nbsp;&nbsp;&nbsp;&nbsp;	var bkgrnd = getCookie("bkgrnd");<br />
+						&nbsp;&nbsp;&nbsp;&nbsp;	if(bkgrnd != ""){<br />
+						&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;		document.getElementById("content").style.backgroundImage = bkgrnd;<br />
+						&nbsp;&nbsp;&nbsp;&nbsp;	}<br />
+						<br />
+						&nbsp;&nbsp;&nbsp;&nbsp;	GetClock();<br />
+						&nbsp;&nbsp;&nbsp;&nbsp;	setInterval(GetClock,1000);<br />
+						&nbsp;&nbsp;&nbsp;&nbsp;	loadJournalEntries();<br />
+						&nbsp;&nbsp;}
+					</li>
+									
+				</ol>
 				
-				<h2>Extentions</h2>
-				<p>HELLO</p>
+				<h2>Extentions and Attributions</h2>
+				<p>To enable the user interface to perform in the way I wanted to allow users to manipulate the pages, I used the following modules:</p>
+				<ol type="1">
+					<li>jQuery-1.3.2.js by John Resig - cross-platform javascript library to simplify client-side scripting.</li>
+					<li>ui.core.js from jQueryui.com - basic user interface interactions, effects, widgets, and themes built on top of the jQuery library.</li>
+					<li>ui.draggable.js from <a href="http://jqueryui.com/download/">jQueryui.com</a> - jQuery library extension that allows dragging objects around the interface.</li>
+					<li>Sort routine from <a href="http://stackoverflow.com/questions/979256/sorting-an-array-of-javascript-objects">stackoverflow.com</a></li>
+					<li>Multiple examples of sticky notes, none of which met all of my requirements, but gave me ideas for my own.</li>
+					<li>Corkboard background image from <a href="http://publicdomainpictures.net">PublicDomainPictures.net</a></li>
+					<li>Chalkboard background image from <a href="http://chrislanephoto.com">ChrisLanePhoto.com</a></li>
+					<li>Paper background images from <a href="http://www.deviantart.com/tag/parchment">DeviantArt.com</a></li>
+					<li>Snake game from Javascript for Kids:A playful introduction to programming.  Author:Nick Morgan</li>
+				</ol>
 				
 				<!--TESTING-->
 				<h2>Testing</h2>
-				<p>HELLO</p>
+				<p>Testing was performed by my father throughout the creation of the website.  He pointed out inconsistencies in funtion and improvements for user interaction.  Testing led to several redesigns and changes in the approach from how I originally envisioned the pages.</p>
 			
 				<h3>Alpha</h3>
-				<p>HELLO</p>
+				<ol type="i">
+					<li>Using github was challenging.  It took some time to get used to the limitations of the interface.</li>
+					<li>Researching examples of sticky notes led me down a few wrong paths.  I could not find an example that did everything I wanted, so I ended up creating my own.  This in turn led to learning simple jQuery.</li>
+					<li>Mixing standard javascript and jQuery.  I am familiar with Java.  Javascript is a bit different for me, and jQuery can be downright confusing.</li>
+				</ol>
 				<h3>Beta</h3>
-				<p>HELLO</p>
+				<ol type="i">
+					<li>Changes to background were not carrying over from page to page.  This ended up being inconsistency between pages.</li>
+					<li>Original sticky notes all stacked in same spot and were difficult to drag due to small side handles.</li>
+					<li>Ghosts of notes and journal pages.  Originally, each note and journal page was entered into LocalStorage as separate items.  This made it difficult when saving information for page changes.  After a bit of research, I found JSON Stringify and Parse solution which simplified the whole storage issue.</li>
+				</ol>
 				
 				<!--Maker's Mark & Video-->
 				<h2>Maker's Mark Video</h2>
-				<p>HELLO</p>
-				<iframe> YOUTUBE</iframe>
+				<p class="centered"><iframe id="largeVideo" src="https://www.youtube.com/embed/8AygIPif2rE?list=PLQgwgSb1GXCxbU-IfvGxZG4cscjC1iIh_" frameborder="0" allowfullscreen></iframe></p>
+				<p>The transcript for the video: <br />
+					When on the main index page, we can click on the Guest at the top of the page
+					 to change the name. When you click okay or hit enter after inputting a name, 
+					 the username is stored into a cookie and this cookie is used across multiple 
+					 pages on the website. You can only change the username on the index page. 
+					<br /><br />
+					Continuing with cookies, you can click on any of these background buttons to 
+					 change the background of the page. The default is set to be a corkboard, but 
+					 once you click on any button, it sets a cookie for  the background and calls 
+					 that cookie for the background throughout the website. For example, I can click
+					 on the black board button to set and save my background as a blackboard. 
+					<br /><br /> 
+					When the body first loads, it will check to see if there is a cookie saved for both
+					 the username and the background. If it returns true for the username, it will get 
+					 the username and set it to be at the top of the page. If it returns false, the username will
+					 be set to "Guest" at the top of the page. If the cookie returns true for the 
+					 background, it will get the background image and set it to be the correct background.
+					 If the background cookie returns false, it will set it to the default corkboard. 
+					 Unlike the username, you can change the background image from any page on the site.
+					<br /><br />
+					The cookies integrated on this website are in the form of a JavaScript .js file. 
+					<br /><br />
+					Underneath the background buttons, there is the date and clock function. 
+					 This data is accessed from calling the Date() function that comes along
+					 with JavaScript.
+					<br /><br /> 
+					From the main page, we can access the sticky note interface, journal interface, and 
+					 the project documentation page.  
+					<br /><br /> 
+					If we go to the Sticky Note Board, we can see that the username and background
+					 have been checked and loaded into the correct position. On the sticky note dashboard,
+					 we can double click to get a blue sticky note, or click any four of these buttons to 
+					 spawn in a new sticky note. I can move the sticky note to anywhere I would like and write
+					 content to the sticky note. Now, it would not be very helpful if the reminders diasppeared
+					 when we came back to the page at a later time. So, when we close out the page, 
+					 the sticky notes are stored into local storage when the body is unloaded. When we 
+					 revisit the page and load the body, the sticky notes are in the same position with the
+					 correct text as we left them. We can re-edit the sticky notes, and move them again as we please.
+					 If I want to get rid of a sticky note, all I have to do is
+					 click on this X button in the top left hand corner. Goodbye reminder.
+					<br /><br /> 
+					Now, if we work our way back to the main page, and go to the journal entry page, we
+					 can store a local online journal. The style behind the journal is meant to look as though we
+					 are actually writing a journal entry. The background image is a barely crumpled piece of paper. 
+					 If we click new entry, and we can start typing in the text area. Unlike the sticky notes, you 
+					 cannot go back and re-edit the journal entry. In order to save the journal entry, we just 
+					 need to click on new entry or refresh the page. There is currently no way to remove a single
+					 journal entry, so if you want to clear the journal, you have to go back to the main page, go
+					 into developer tools, find local storage, and delete the journalEntry storage item. 
+					<br /><br /> 
+					If we go look at the project information page, we can look at the design concept heirarchy tree
+					 and see what pages access different site pages, JavaScript and CSS pages. The header.css file
+					 is used throughout the site to create the teal color header with the username, background buttons, 
+					 and time and clock. Each page on the site has it's own external CSS file for easy access to change 
+					 any style. Every site page also calls the clock and cookie javascript files. And the interfaces call 
+					 their respective javascript files. 
+					<br /><br /> 
+					That concludes the video tutorial walkthrough of my site. Thank you for listening, and happy
+					 sticky noting. </p>
 			</div>
-		</div> 
+		</div>
 	</body>
 </html>
