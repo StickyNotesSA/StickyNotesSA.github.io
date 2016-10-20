@@ -9,21 +9,20 @@
 
 			.content{
 				position:absolute;
-				background: url(images/cork.png) repeat;
-				min-height:100%;
+				background: transparent url(images/cork.png) top left;
 				top:60px;
 				left:0px;
 				right:0px;
 				padding:0px;
 				margin:0px;
+				height:100%;
 				z-index:1;
 			}
 
 		</style>
 		<script type="text/javascript" src="javascript/jquery-1.3.2.js"></script>
-		<script type="text/javascript" src="javascript/ui.core.js"></script>
-		<script type="text/javascript" src="javascript/header.js"></script>		
 		<script type="text/javascript" src="javascript/journalpage.js"></script>
+		<script type="text/javascript" src="javascript/ui.core.js"></script>
 		<script type="text/javascript" src="javascript/clock.js"></script>
 		<script type="text/javascript" src="javascript/myLocalStore.js"></script>
 		<script type="text/javascript" src="javascript/cookie.js"></script>
@@ -44,15 +43,10 @@
 
 				GetClock();
 				setInterval(GetClock,1000);
-				loadJournalEntries();
+				createJournalEntry();
 			}
 
 		$(function() {
-
-		
-			$("#addNew").click(function(){
-				newJournalEntry(GetJournalDate());
-			});
 
 			$("#bkgrnd-cork").click(function(){
 				document.getElementById("content").style.backgroundImage = "url(images/cork.png)";
@@ -69,23 +63,21 @@
 				setCookie("bkgrnd", "url(images/wboard.png)");
 			});
 			$("#bkgrnd-paper").click(function(){
-				document.getElementById("content").style.backgroundImage = "url(images/paper6.png)";
-				setCookie("bkgrnd", "url(images/paper6.png)");
+				document.getElementById("content").style.backgroundImage = "url(images/paper6.jpg)";
+				setCookie("bkgrnd", "url(images/paper6.jpg)");
 			});
 		
 		});
 		</script>
 	</head>
-    <body onunload="updateJournalEntries(); commitJournalEntries();">
+    <body>
 		<button id="myButton" onclick="window.location.href='index.html'">&lt;&lt; Go Home</button>
 		<div class="header"></div>
 		<div id="txtusername"></div>
 		<div id="clockDate"></div>
 		<div id="clockTime"></div>
 		<div id="journalDiv" class="journalDiv">
-			<div id="addNew" >New Entry</div>
 			<table id="journalTable" class="journalTable">
-
 				<tr id="emptyTR"></tr>
 			</table>
 		</div> 	
@@ -93,7 +85,7 @@
 			<li id="bkgrnd-cork" style="background-image:url(images/cork.png)">&nbsp;&nbsp;</li>
 			<li id="bkgrnd-bboard" style="background-image:url(images/chalkboard.png)">&nbsp;&nbsp;</li>
 			<li id="bkgrnd-wboard" style="background-color:#f5f3ee">&nbsp;&nbsp;</li>
-			<li id="bkgrnd-paper" style="background-image:url(images/paper6.png)">&nbsp;&nbsp;</li>
+			<li id="bkgrnd-paper" style="background-image:url(images/paper6.jpg)">&nbsp;&nbsp;</li>
 		</ul>
 
 		<div id="content" class="content"></div>
