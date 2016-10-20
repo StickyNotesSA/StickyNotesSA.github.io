@@ -1,6 +1,8 @@
+//arrays to convert numbers to nice text values
 var tday=new Array("Sunday","Monday","Tuesday","Wednesday","Thursday","Friday","Saturday");
 var tmonth=new Array("January","February","March","April","May","June","July","August","September","October","November","December");
 
+//get the clock data down to the second and set the value into the clock elements
 function GetClock(){
 	var d=new Date();
 	var nday=d.getDay(),nmonth=d.getMonth(),ndate=d.getDate(),nyear=d.getYear();
@@ -18,6 +20,7 @@ function GetClock(){
 	document.getElementById('clockTime').innerHTML=""+nhour+":"+nmin+":"+nsec+ap+"";
 }
 
+//return a date and time entry for journal entries - only down to the minute..
 function GetJournalDate(){
 	var d=new Date();
 	var nday=d.getDay(),nmonth=d.getMonth(),ndate=d.getDate(),nyear=d.getYear();

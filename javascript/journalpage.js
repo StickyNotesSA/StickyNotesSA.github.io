@@ -4,13 +4,16 @@
 //Cound not sort on date since we are only returning up to minute.
 //found a really good generic sort scriptlet on stackoverflow
 
+//track elements for sorting
 var maxEntry = 0;
 
+//create a new journal entry calls other functions
 newJournalEntry = function(entryTime){
 	updateJournalEntries();
 	createJournalEntry(entryTime);
 }
 
+//code to create two table rows to store our journal elements
 createJournalEntry = function(entryTime){
 	var _journal_entry = "<td class=journalEntry id=journalEntry><textarea class=editjournalText id=editjournalText></textarea></td>";
 	var _journal_date = "<td class=editjournalDate id=editjournalDate></td>";
@@ -20,11 +23,13 @@ createJournalEntry = function(entryTime){
 	$("#journalTable tbody").prepend(_journal_EntryRow.toString());
 	$("#journalTable tbody").prepend(_journal_DateRow);
 	document.getElementById("editjournalDate").innerHTML = entryTime;
+	//store some data in hidden values to make it easier to send to LocalStorage
 	$("#editjournalText").attr("hiddenVal", entryTime);
 	$("#editjournalText").attr("order", maxEntry++);
 	document.getElementById("editjournalText").focus();
 }
 
+//change the editable text entry area to readonly and modif class for storage recall
 updateJournalEntries = function(){
 	var curEntry = document.getElementById("editjournalText");
 	if(curEntry != null){
@@ -43,6 +48,8 @@ updateJournalEntries = function(){
 	}
 }
 
+//read the journal entries in place date, entry number, and content into array 
+//disregard empty entries
 commitJournalEntries = function(){
 	var journalArr = [];
 	var journalObj;
@@ -58,13 +65,17 @@ commitJournalEntries = function(){
 			journalArr.push(journalObj);
 		}
 	}
+	//stringify and place array in LocalStorage
 	localStorage.setItem('JournalEntries', JSON.stringify(journalArr));
 }
 
+//load the entries from LocalStorage into an array using JSON parse
 loadJournalEntries = function(){
 	var journalList = JSON.parse(localStorage.getItem("JournalEntries"));
 	var jNum;
+	//reset maxEntry to 0 so we remove gaps in the numbering as we rebuild the entries to screen
 	maxEntry = 0;
+	//if there are entries to load, sort them by entry number so oldest go on screen at bottom
 	if(journalList != null){
 		var sortedList = journalList.sort(sort_by('jOrder', false, parseInt));
 		for (jNum = 0; jNum < sortedList.length; jNum++) {
@@ -73,6 +84,7 @@ loadJournalEntries = function(){
 			updateJournalEntries();
 		}
 	} else {
+		//open a new entry for the user
 		createJournalEntry(GetJournalDate());
 	}
 }

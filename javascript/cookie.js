@@ -1,5 +1,6 @@
 var userName = "";
 
+//set the cookie value for a named key
 function setCookie(cname, cval) {
 	var expDate = new Date();
 	expDate.setDate(expDate.getDate()+365);
@@ -7,6 +8,7 @@ function setCookie(cname, cval) {
     document.cookie = mystring;
 }
 
+//get the cookie value for the named key
 function getCookie(cname){
     var name = cname + "=";
     var ca = document.cookie.split(';');
@@ -22,6 +24,7 @@ function getCookie(cname){
     return "";
 }
 
+//check if a cookie with the key requested is available
 function checkCookie(cname){
 	if(getCookie(cname) != ""){
 		return true;
