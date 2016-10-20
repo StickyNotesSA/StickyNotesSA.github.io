@@ -24,7 +24,7 @@
 .journalDiv{
 	position:absolute;
 	background: url(../images/paper1.jpg);
-	top:70px;
+	top:10px;
 	left:20%;
 	height:95%;
 	width:60%;
@@ -87,8 +87,8 @@
 	padding-bottom:10px;
 	width: 90%; 
     box-sizing: border-box;
-     -webkit-box-sizing:border-box;
-     -moz-box-sizing: border-box;
+    -webkit-box-sizing:border-box;
+    -moz-box-sizing: border-box;
 }
 
 .journalText{

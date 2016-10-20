@@ -2,9 +2,9 @@
 		position:absolute;
 		background-color: #e6e6e6;
 		top:0px;
-		left:20%;
+		left:15%;
 		padding-left:7px;
-		width:60%;
+		width:70%;
 		z-index: 8000;
 }
 /* #f5f3ee */
@@ -12,9 +12,10 @@ h2{
 		text-decoration: bold;
 		z-index: 9000;
 		color: #cb99ff;
+		left: 20px;
 }
 h2:nth-of-type(even){
-		color: green;
+		color: lime;
 	}
 	
 	/*#ccff99 */
@@ -28,10 +29,32 @@ iframe#largeVideo{
 	height:315px;
 	z-index:999999;
 }
+h3{
+	position: relative;
+	margin-left: 2%;
+	margin-right: 2%;
+}
+
+p, ul, ol{
+	position: relative;
+	margin-left: 5%;
+	margin-right: 5%;
+}
+
+.centered{
+	position: static;
+	text-align: center;
+}
 
 a {
   display: inline-block;
-  margin-bottom: 20px;
   color: #000;
   font-family: Arial, sans-serif;
+}
+
+.fltLeft{
+	float: left;
+}
+.fltRight{
+	float: right;
 }
