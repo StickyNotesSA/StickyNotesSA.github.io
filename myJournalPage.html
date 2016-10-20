@@ -2,11 +2,11 @@
 <html>
     <head>
         <title>Journal</title>
+		<!--header.css is for shared header elements for all pages and journalpage.css is for elements specific to this page-->
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
         <link rel="stylesheet" type="text/css" href="css/header.css" media="screen"/>
         <link rel="stylesheet" type="text/css" href="css/journalpage.css" media="screen"/>
 		<style>
-
 			.content{
 				position:absolute;
 				background: url("images/cork.png") top left repeat;
@@ -20,6 +20,8 @@
 			}
 
 		</style>
+		<!--jQuery modules and javascript files-->
+		<!--some of these files could have been combined, but it made sense to separate some of the code into reusable groups-->
 		<script type="text/javascript" src="javascript/jquery-1.3.2.js"></script>
 		<script type="text/javascript" src="javascript/ui.core.js"></script>
 		<script type="text/javascript" src="javascript/header.js"></script>		
@@ -27,9 +29,12 @@
 		<script type="text/javascript" src="javascript/clock.js"></script>
 		<script type="text/javascript" src="javascript/myLocalStore.js"></script>
 		<script type="text/javascript" src="javascript/cookie.js"></script>
-
+		
+		<!--Inline javascript and jQuery-->
 		<script type="text/javascript">
+			<!--onload function to set username,background, and clock for each page and for functions needed at start -->
 			window.onload=function(){
+				<!--username carries across the interactive pages, but is only settable from index.html-->
 				var userName;
 				if(checkCookie("UserName")){
 					userName=getCookie("UserName");
@@ -37,23 +42,27 @@
     				userName = "Guest";
     			}
 				document.getElementById("txtusername").textContent = userName + "\'s Journal";
+				
+				<!--background can be set on any page and carries over to all other pages except snake, background is stored as a cookie-->
 				var bkgrnd = getCookie("bkgrnd");
 				if(bkgrnd != ""){
 					document.getElementById("content").style.backgroundImage = bkgrnd;
 				}
-
+				<!--My clock in the corner-->
 				GetClock();
 				setInterval(GetClock,1000);
+				<!--look in LocalStorage for any joural entries and import them-->				
 				loadJournalEntries();
 			}
 
 		$(function() {
 
-		
+			<!--click on the tag to start a new journal entry-->		
 			$("#addNew").click(function(){
 				newJournalEntry(GetJournalDate());
 			});
-
+			
+			<!--events for my div hotspot buttons in the header to set the background - changing the background updates the cookie-->
 			$("#bkgrnd-cork").click(function(){
 				document.getElementById("content").style.backgroundImage = "url(images/cork.png)";
 				setCookie("bkgrnd", "url(images/cork.png)");
@@ -76,13 +85,17 @@
 		});
 		</script>
 	</head>
+	
+	<!--when we leave the page, set any pending journal entry and then save them all to LocalStorage-->
     <body onunload="updateJournalEntries(); commitJournalEntries();">
+		<!--button in the left of the header to navigate back to main page-->
 		<button id="myButton" onclick="window.location.href='index.html'">&lt;&lt; Go Home</button>
 		<div class="header"></div>
 		<div id="txtusername"></div>
 		<div id="clockDate"></div>
 		<div id="clockTime"></div>
 		
+		<!--hotspots in the header above clock to change the background-->
 		<ul class="bkgrnd">
 			<li id="bkgrnd-cork" style="background-image:url(images/cork.png)">&nbsp;&nbsp;</li>
 			<li id="bkgrnd-bboard" style="background-image:url(images/chalkboard.png)">&nbsp;&nbsp;</li>
@@ -90,11 +103,12 @@
 			<li id="bkgrnd-paper" style="background-image:url(images/paper6.png)">&nbsp;&nbsp;</li>
 		</ul>
 
+		<!--content area for journal entry paper -->
 		<div id="content" class="content">
 			<div id="journalDiv" class="journalDiv">
 				<div id="addNew" >New Entry</div>
+				<!--Each entry is two rows in a table-->
 				<table id="journalTable" class="journalTable">
-
 					<tr id="emptyTR"></tr>
 				</table>
 			</div> 	
