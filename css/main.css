@@ -1,7 +1,6 @@
 
 /* START OF NAVIGATION STICKY NOTE CSS*/
-/* Attribution: https://code.tutsplus.com/tutorials/create-a-sticky-note-effect-in-5-easy-steps-with-css3-and-html5--net-13934 - editted to my specifications with degrees and colors*/
-	
+/*navigation cards on index.html*/	
 	.nav ul, li{
 		list-style: none;
 	}
@@ -91,8 +90,7 @@
 		font-size: 20px;
 	}
 
-
-/* SPECIFIC TO NAVIGATION NOTES - CREATE A STICKY & HOME PAGE & DESIGN DOCUMENTATION*/
+/*keep the cards in order on the page*/
 
 	#horizontalList {
 		display: inline;

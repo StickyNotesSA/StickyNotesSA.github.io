@@ -1,13 +1,6 @@
-.addNew{
-	position:relative;
-	height:10px;
-	font-weight:bold;
-	fontsize:10px;
-	left:2px;
-	color:black;
-}
+/*format text for New Entry button on journal page*/
 
-.removeEntry{
+.addNew{
 	position:relative;
 	height:10px;
 	font-weight:bold;
@@ -21,6 +14,7 @@
 	color: #ff99cc;
 }
 
+/*the div that holds the journal paper*/
 .journalDiv{
 	position:absolute;
 	background: url(../images/paper1.jpg);
@@ -32,6 +26,7 @@
 	display:table;
 }
 
+/*the journal table that holds the entry records*/
 .journalTable{
 	width:100%;
 	border-collapse: collapse;
@@ -41,7 +36,7 @@
 	overflow: hidden; 
 }
 
-
+/*TR entries for Date and Content*/
 .journalDateRow{
 	position:relative;
 	top:5px;
@@ -57,6 +52,7 @@
 	width:90%;
 }
 
+/*TD for date when committed*/
 .journalDate{
 	font-family:"Comic Sans MS", cursive, sans-serif;
 	font-style:italic;
@@ -68,6 +64,7 @@
 	opacity:0.6;
 }
 
+/*TD for date when editable*/
 .editjournalDate{
 	font-family:"Comic Sans MS", cursive, sans-serif;
 	font-style:italic;
@@ -79,6 +76,7 @@
 	opacity:1;
 }
 
+/*TD for journal entry when editable and when committed*/
 .journalEntry{
 	font-family:"Comic Sans MS", cursive, sans-serif;
 	font-style:italic;
@@ -91,6 +89,7 @@
     -moz-box-sizing: border-box;
 }
 
+/*Journal text area when committed*/
 .journalText{
 	font-family:"Comic Sans MS", cursive, sans-serif;
 	font-style:italic;
@@ -104,6 +103,7 @@
 	width:80%;
 }
 
+/*Journal text area then editable*/
 .editjournalText{
 	font-family:"Comic Sans MS", cursive, sans-serif;
 	font-style:italic;

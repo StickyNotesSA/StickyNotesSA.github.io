@@ -1,3 +1,4 @@
+/*Main content area for documentation*/
 .documentationDiv{
 		position:absolute;
 		background-color: #e6e6e6;
@@ -7,7 +8,7 @@
 		width:70%;
 		z-index: 8000;
 }
-/* #f5f3ee */
+/*change the color of the headers based on pattern*/
 h2{
 		text-decoration: bold;
 		z-index: 9000;
@@ -18,43 +19,41 @@ h2:nth-of-type(even){
 		color: lime;
 	}
 	
-	/*#ccff99 */
 h2:nth-of-type(3n){
 		color: #ff99cc;
 	}
 
+/*formatting for iFrame area for video*/
 iframe#largeVideo{
 	position:relative;
 	width:560px;
 	height:315px;
 	z-index:999999;
 }
+
+/*Alpha and Beta*/
 h3{
 	position: relative;
 	margin-left: 2%;
 	margin-right: 2%;
 }
 
+/*generic settings for paragraphs and lists*/
 p, ul, ol{
 	position: relative;
 	margin-left: 5%;
 	margin-right: 5%;
 }
 
+/*centers iFrame and images*/
 .centered{
 	position: static;
 	text-align: center;
 }
 
+/*link format*/
 a {
   display: inline-block;
   color: #000;
   font-family: Arial, sans-serif;
-}
-
-.fltLeft{
-	float: left;
-}
-.fltRight{
-	float: right;
 }

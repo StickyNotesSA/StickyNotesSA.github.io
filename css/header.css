@@ -1,3 +1,4 @@
+/*body settings for all pages*/
 body {
 	background: url(images/cork.png) fixed;
 	margin:0px;
@@ -5,6 +6,7 @@ body {
 	font-family: tahoma;
 }
 
+/*settings for header area for all pages*/
 .header{
 	position:absolute;
 	top:0px;
@@ -14,6 +16,7 @@ body {
 	height:60px;
 }
 
+/*background buttons in header for all pages*/
 ul.bkgrnd{
 	list-style-type:none;
 	position:absolute;
@@ -42,6 +45,7 @@ ul.bkgrnd li{
 	border-top:none;
 }
 
+/*clock date text area for all pages*/
 div#clockDate{
 	position:absolute;
 	top:25px;
@@ -52,6 +56,7 @@ div#clockDate{
 	z-index:9999;
 }
 
+/*clock time text area for all pages*/
 div#clockTime{
 	position:absolute;
 	top:42px;
@@ -62,6 +67,7 @@ div#clockTime{
 	z-index:9999;
 }
 
+/*user name text area for all pages*/
 div#txtusername{
 	position:absolute;
 	top: 20px;
@@ -73,6 +79,7 @@ div#txtusername{
 	z-index:9999;
 }
 
+/*navigation button for all pages*/
 button#myButton{
 		position:absolute;
 		top:10px;

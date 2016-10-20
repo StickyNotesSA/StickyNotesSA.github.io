@@ -1,3 +1,4 @@
+/*sticky note colors and initial positioning */
 .orange{
 	background-color: #ffa300;
 	width:225px;
@@ -44,6 +45,7 @@
 		
 }
 
+/*delete button on sticky note */
 .jSticky-delete{
 	background:transparent url(../images/delete.png) no-repeat top left;
 	height:14px;
@@ -52,6 +54,7 @@
 	cursor:pointer;
 }
 
+/*formatting for stickynote text box*/
 .jStickyNote textarea{
 	width:85%;
 	height:180px;
@@ -69,6 +72,7 @@
 	resize:none;
 }
 
+/*formatting for the littly buttons to create sticky notes*/
 ul.postits{
 	list-style-type:none;
 	position:absolute;
